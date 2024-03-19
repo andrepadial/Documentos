@@ -1,0 +1,69 @@
+<Context cookies="true" crossContext="true" debug="0" docBase="ABEBWS" path="/ABEBWS" reloadable="true" antiJARLocking="false" antiResourceLocking="false">
+<Transaction 
+          jotm.timeout="360"
+          factory="br.com.autbank.jndi.UserTransactionFactory"/>
+
+<Resource auth="Application" 
+          description="CONTROLE DE ACESSO" 
+          name="jdbc/CA" 
+          scope="Shareable" 
+          type="javax.sql.DataSource" 
+          factory="br.com.autbank.jndi.DataSourceFactory" 
+          url="jdbc:jtds:sqlserver://servidor/AB_CONTROLE;useCursors=true;sendStringParametersAsUnicode=false;wsid=ABEBWS" 
+          driverClassName="net.sourceforge.jtds.jdbc.Driver" 
+          checkLevelObject="2" 
+          maxSize="50" />
+
+<Resource auth="Application" 
+          description="SGC" 
+          name="jdbc/GC" 
+          scope="Shareable" 
+          type="javax.sql.DataSource" 
+          factory="br.com.autbank.jndi.DataSourceFactory" 
+          url="jdbc:jtds:sqlserver://servidor/AB_SGC;useCursors=true;sendStringParametersAsUnicode=false;wsid=ABEBWS" 
+          driverClassName="net.sourceforge.jtds.jdbc.Driver" 
+          checkLevelObject="2" 
+          maxSize="50" />
+		  
+<Resource auth="Application" 
+          description="E-bank" 
+          name="jdbc/GC" 
+          scope="Shareable" 
+          type="javax.sql.DataSource" 
+          factory="br.com.autbank.jndi.DataSourceFactory" 
+          url="jdbc:jtds:sqlserver://servidor/AGENCIAW;useCursors=true;sendStringParametersAsUnicode=false;wsid=ABEBWS" 
+          driverClassName="net.sourceforge.jtds.jdbc.Driver" 
+          checkLevelObject="2" 
+          maxSize="50" />
+
+<Resource auth="Application" 
+          description="INFOBANC" 
+          name="jdbc/IB" 
+          scope="Shareable" 
+          type="javax.sql.DataSource" 
+          factory="br.com.autbank.jndi.DataSourceFactory" 
+          url="jdbc:jtds:sqlserver://servidor/AB_INFOBANC;useCursors=true;sendStringParametersAsUnicode=false;wsid=ABEBWS" 
+          driverClassName="net.sourceforge.jtds.jdbc.Driver" 
+          checkLevelObject="2" 
+          maxSize="50" />
+		  
+
+<Resource auth="Application" 
+          description="PORTAL" 
+          name="jdbc/PG" 
+          scope="Shareable" 
+          type="javax.sql.DataSource" 
+          factory="br.com.autbank.jndi.DataSourceFactory" 
+          url="jdbc:jtds:sqlserver://servidor/AB_PORTAL;useCursors=true;sendStringParametersAsUnicode=false;wsid=ABEBWS" 
+          driverClassName="net.sourceforge.jtds.jdbc.Driver" 
+          checkLevelObject="2" 
+          maxSize="50" />
+
+<Logger className="org.apache.catalina.logger.FileLogger"
+	prefix="ABEBWS." suffix=".txt"
+	timestamp="true"/>
+
+<Valve className="org.apache.catalina.valves.AccessLogValve"
+	 directory="logs" prefix="ABEBWS_acess_log." suffix=".txt"
+	 resolveHosts="false" />
+</Context>

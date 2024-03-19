@@ -1,0 +1,1338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://literal.autbank.com.br" xmlns:intf="http://literal.autbank.com.br" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://literal.autbank.com.br">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://literal.autbank.com.br">
+   <element name="consultaMsg">
+    <complexType>
+     <sequence>
+      <element name="codSistemaO" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+      <element name="tipoConsulta" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaMsgResponse">
+    <complexType>
+     <sequence>
+      <element name="consultaMsgReturn" type="impl:TOConsultaIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TOConsultaIL">
+    <sequence>
+     <element name="codErroSpb" nillable="true" type="xsd:string"/>
+     <element name="codMsg" nillable="true" type="xsd:string"/>
+     <element name="codMsgErro" nillable="true" type="xsd:string"/>
+     <element name="codRejeicao" nillable="true" type="xsd:string"/>
+     <element name="codSistema" nillable="true" type="xsd:string"/>
+     <element name="desStatusSgr" nillable="true" type="xsd:string"/>
+     <element name="desStatusStr" nillable="true" type="xsd:string"/>
+     <element name="destino" nillable="true" type="xsd:string"/>
+     <element name="motivoRejei" nillable="true" type="xsd:string"/>
+     <element name="msgErro" nillable="true" type="xsd:string"/>
+     <element name="msgErroSpb" nillable="true" type="xsd:string"/>
+     <element name="numCtrlSpb" nillable="true" type="xsd:string"/>
+     <element name="numOrigem" nillable="true" type="xsd:string"/>
+     <element name="numOrigemOr" nillable="true" type="xsd:string"/>
+     <element name="situcao" nillable="true" type="xsd:string"/>
+     <element name="statusSgr" nillable="true" type="xsd:string"/>
+     <element name="statusStr" nillable="true" type="xsd:string"/>
+     <element name="xml" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="consultaStatusV2">
+    <complexType>
+     <sequence>
+      <element name="codSistemaO" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+      <element name="moduloTrans" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaStatusV2Response">
+    <complexType>
+     <sequence>
+      <element name="consultaStatusV2Return" type="impl:TOConsultaIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaStatus">
+    <complexType>
+     <sequence>
+      <element name="codSistemaO" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaStatusResponse">
+    <complexType>
+     <sequence>
+      <element name="consultaStatusReturn" type="impl:TOConsultaIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaMsgV2">
+    <complexType>
+     <sequence>
+      <element name="codSistemaO" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+      <element name="tipoConsulta" type="xsd:string"/>
+      <element name="moduloTrans" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultaMsgV2Response">
+    <complexType>
+     <sequence>
+      <element name="consultaMsgV2Return" type="impl:TOConsultaIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirTransacao">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="indAutorizacao" type="xsd:string"/>
+      <element name="dataReserva" type="xsd:string"/>
+      <element name="dataHoraLimite" type="xsd:string"/>
+      <element name="nroBoleto" type="xsd:string"/>
+      <element name="codSisLegadoDestino" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="corpoMensagem" type="xsd:string"/>
+      <element name="msgXmlUsr" type="xsd:string"/>
+      <element name="nroBordero" type="xsd:string"/>
+      <element name="moduloTrans" type="xsd:string"/>
+      <element name="sisSubOrigem" type="xsd:string"/>
+      <element name="numCtrlIfOr" type="xsd:string"/>
+      <element name="statusOp" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirTransacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="incluirTransacaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TORetornoServicoIL">
+    <sequence>
+     <element name="codErro" nillable="true" type="xsd:string"/>
+     <element name="msgErro" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="incluirPrevisao">
+    <complexType>
+     <sequence>
+      <element name="codInstituicao" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="nroBoleto" type="xsd:string"/>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="dataReserva" type="xsd:string"/>
+      <element name="valorPrevisao" type="xsd:decimal"/>
+      <element name="natureza" type="xsd:string"/>
+      <element name="ISPBIFContraParte" type="xsd:string"/>
+      <element name="agenciaContraParte" type="xsd:string"/>
+      <element name="nroContaContraParte" type="xsd:string"/>
+      <element name="cnpjCpfContraParte" type="xsd:string"/>
+      <element name="ISPBCamara" type="xsd:string"/>
+      <element name="descPrevisao" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="tipoLiquidacao" type="xsd:string"/>
+      <element name="nomeCliente" type="xsd:string"/>
+      <element name="corpoMensagem" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirPrevisaoResponse">
+    <complexType>
+     <sequence>
+      <element name="incluirPrevisaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirOperacao">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="codInstituicao" type="xsd:string"/>
+      <element name="ISPBCamara" type="xsd:string"/>
+      <element name="codTituloMoeda" type="xsd:string"/>
+      <element name="qtdNegociada" type="xsd:decimal"/>
+      <element name="dataVectoTitulo" type="xsd:string"/>
+      <element name="dataProcSisOrigem" type="xsd:string"/>
+      <element name="dataReserva" type="xsd:string"/>
+      <element name="natureza" type="xsd:string"/>
+      <element name="efeitoQtde" type="xsd:string"/>
+      <element name="nroOpearacao" type="xsd:string"/>
+      <element name="cnpjContraParte" type="xsd:string"/>
+      <element name="descContraParte" type="xsd:string"/>
+      <element name="valorOperacao" type="xsd:decimal"/>
+      <element name="tipoLiquidacao" type="xsd:string"/>
+      <element name="emissorObjeto" type="xsd:string"/>
+      <element name="nroBoleto" type="xsd:string"/>
+      <element name="tipoEmissor" type="xsd:string"/>
+      <element name="cnpjTitularOperacao" type="xsd:string"/>
+      <element name="descOperacao" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirOperacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="incluirOperacaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cancelarPrevisao">
+    <complexType>
+     <sequence>
+      <element name="codInstituicao" type="xsd:string"/>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cancelarPrevisaoResponse">
+    <complexType>
+     <sequence>
+      <element name="cancelarPrevisaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="alterarPrevisao">
+    <complexType>
+     <sequence>
+      <element name="codInstituicao" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="nroBoleto" type="xsd:string"/>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="dataReserva" type="xsd:string"/>
+      <element name="valorPrevisao" type="xsd:decimal"/>
+      <element name="natureza" type="xsd:string"/>
+      <element name="ISPBIFContraParte" type="xsd:string"/>
+      <element name="agenciaContraParte" type="xsd:string"/>
+      <element name="nroContaContraParte" type="xsd:string"/>
+      <element name="cnpjCpfContraParte" type="xsd:string"/>
+      <element name="ISPBCamara" type="xsd:string"/>
+      <element name="descPrevisao" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="tipoLiquidacao" type="xsd:string"/>
+      <element name="tipoAlteracao" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="alterarPrevisaoResponse">
+    <complexType>
+     <sequence>
+      <element name="alterarPrevisaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="alterarOperacao">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="alterarOperacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="alterarOperacaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cancelarTransacaoV2">
+    <complexType>
+     <sequence>
+      <element name="codSistemaO" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="moduloTrans" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cancelarTransacaoV2Response">
+    <complexType>
+     <sequence>
+      <element name="cancelarTransacaoV2Return" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirTransacaoV2">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="indAutorizacao" type="xsd:string"/>
+      <element name="dataReserva" type="xsd:string"/>
+      <element name="dataHoraLimite" type="xsd:string"/>
+      <element name="nroBoleto" type="xsd:string"/>
+      <element name="codSisLegadoDestino" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="corpoMensagem" type="xsd:string"/>
+      <element name="msgXmlUsr" type="xsd:string"/>
+      <element name="nroBordero" type="xsd:string"/>
+      <element name="moduloTrans" type="xsd:string"/>
+      <element name="sisSubOrigem" type="xsd:string"/>
+      <element name="numCtrlIfOr" type="xsd:string"/>
+      <element name="statusOp" type="xsd:string"/>
+      <element name="codInstituicao" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirTransacaoV2Response">
+    <complexType>
+     <sequence>
+      <element name="incluirTransacaoV2Return" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cancelarTransacao">
+    <complexType>
+     <sequence>
+      <element name="codSistemaO" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="cancelarTransacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="cancelarTransacaoReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarPrevisao">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="codInstituicao" type="xsd:string"/>
+      <element name="dataMovtoInicial" type="xsd:string"/>
+      <element name="dataMovtoFinal" type="xsd:string"/>
+      <element name="dataReservaInicial" type="xsd:string"/>
+      <element name="dataReservaFinal" type="xsd:string"/>
+      <element name="natureza" type="xsd:string"/>
+      <element name="tipoLiquidacao" type="xsd:string"/>
+      <element name="situacao" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarPrevisaoResponse">
+    <complexType>
+     <sequence>
+      <element name="consultarPrevisaoReturn" type="impl:TOConsultaIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarOperacao">
+    <complexType>
+     <sequence>
+      <element name="dataReserva" type="xsd:string"/>
+      <element name="status" type="xsd:string"/>
+      <element name="ISPBCamara" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarOperacaoResponse">
+    <complexType>
+     <sequence>
+      <element name="consultarOperacaoReturn" type="impl:TOConsultaIL"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirMensagemRegistrato">
+    <complexType>
+     <sequence>
+      <element name="codSistOrigem" type="xsd:string"/>
+      <element name="ispbIf" type="xsd:string"/>
+      <element name="cpfCliente" type="xsd:string"/>
+      <element name="ipCliente" type="xsd:string"/>
+      <element name="txtFraseSeguranca" type="xsd:string"/>
+      <element name="historico" type="xsd:string"/>
+      <element name="datMovimento" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirMensagemRegistratoResponse">
+    <complexType>
+     <sequence>
+      <element name="incluirMensagemRegistratoReturn" type="impl:TOMensagemRegistratoRetorno"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TOMensagemRegistratoRetorno">
+    <sequence>
+     <element name="codErro" nillable="true" type="xsd:string"/>
+     <element name="dataHoraBacen" nillable="true" type="xsd:string"/>
+     <element name="indValidaFraseSeg" nillable="true" type="xsd:string"/>
+     <element name="msgErro" nillable="true" type="xsd:string"/>
+     <element name="numOrigem" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="conciliaPrevisoes">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroBoleto" type="xsd:string"/>
+      <element name="numCtrlIF" type="xsd:string"/>
+      <element name="valorTransacao" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="conciliaPrevisoesResponse">
+    <complexType>
+     <sequence>
+      <element name="conciliaPrevisoesReturn" type="impl:TOConciliaPrevisoesRetorno"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="TOConciliaPrevisoesRetorno">
+    <sequence>
+     <element name="codErro" nillable="true" type="xsd:string"/>
+     <element name="msgErro" nillable="true" type="xsd:string"/>
+     <element name="vlrConciliado" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <element name="consultarMensagemRegistrato">
+    <complexType>
+     <sequence>
+      <element name="codSistOrigem" type="xsd:string"/>
+      <element name="numOrigem" type="xsd:string"/>
+      <element name="ispbIf" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="consultarMensagemRegistratoResponse">
+    <complexType>
+     <sequence>
+      <element name="consultarMensagemRegistratoReturn" type="impl:TOMensagemRegistratoRetorno"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirTransacaoPrioridadeDDA">
+    <complexType>
+     <sequence>
+      <element name="codSisOrigem" type="xsd:string"/>
+      <element name="nroCtrlOrigem" type="xsd:string"/>
+      <element name="codInstituicao" type="xsd:string"/>
+      <element name="usuario" type="xsd:string"/>
+      <element name="corpoMensagem" type="xsd:string"/>
+      <element name="temTransacao" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="incluirTransacaoPrioridadeDDAResponse">
+    <complexType>
+     <sequence>
+      <element name="incluirTransacaoPrioridadeDDAReturn" type="impl:TORetornoServicoIL"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="consultarPrevisaoRequest">
+
+      <wsdl:part element="impl:consultarPrevisao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaMsgResponse">
+
+      <wsdl:part element="impl:consultaMsgResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaStatusV2Response">
+
+      <wsdl:part element="impl:consultaStatusV2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirTransacaoResponse">
+
+      <wsdl:part element="impl:incluirTransacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="conciliaPrevisoesRequest">
+
+      <wsdl:part element="impl:conciliaPrevisoes" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirPrevisaoRequest">
+
+      <wsdl:part element="impl:incluirPrevisao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirTransacaoPrioridadeDDAResponse">
+
+      <wsdl:part element="impl:incluirTransacaoPrioridadeDDAResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelarPrevisaoResponse">
+
+      <wsdl:part element="impl:cancelarPrevisaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirPrevisaoResponse">
+
+      <wsdl:part element="impl:incluirPrevisaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="alterarOperacaoRequest">
+
+      <wsdl:part element="impl:alterarOperacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="alterarOperacaoResponse">
+
+      <wsdl:part element="impl:alterarOperacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelarTransacaoResponse">
+
+      <wsdl:part element="impl:cancelarTransacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaStatusResponse">
+
+      <wsdl:part element="impl:consultaStatusResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarMensagemRegistratoResponse">
+
+      <wsdl:part element="impl:consultarMensagemRegistratoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaMsgRequest">
+
+      <wsdl:part element="impl:consultaMsg" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirOperacaoResponse">
+
+      <wsdl:part element="impl:incluirOperacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirOperacaoRequest">
+
+      <wsdl:part element="impl:incluirOperacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="alterarPrevisaoRequest">
+
+      <wsdl:part element="impl:alterarPrevisao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="conciliaPrevisoesResponse">
+
+      <wsdl:part element="impl:conciliaPrevisoesResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaStatusV2Request">
+
+      <wsdl:part element="impl:consultaStatusV2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirTransacaoV2Response">
+
+      <wsdl:part element="impl:incluirTransacaoV2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirMensagemRegistratoResponse">
+
+      <wsdl:part element="impl:incluirMensagemRegistratoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaStatusRequest">
+
+      <wsdl:part element="impl:consultaStatus" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelarTransacaoV2Response">
+
+      <wsdl:part element="impl:cancelarTransacaoV2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirTransacaoRequest">
+
+      <wsdl:part element="impl:incluirTransacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="alterarPrevisaoResponse">
+
+      <wsdl:part element="impl:alterarPrevisaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelarPrevisaoRequest">
+
+      <wsdl:part element="impl:cancelarPrevisao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelarTransacaoV2Request">
+
+      <wsdl:part element="impl:cancelarTransacaoV2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirTransacaoV2Request">
+
+      <wsdl:part element="impl:incluirTransacaoV2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarPrevisaoResponse">
+
+      <wsdl:part element="impl:consultarPrevisaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaMsgV2Request">
+
+      <wsdl:part element="impl:consultaMsgV2" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarOperacaoRequest">
+
+      <wsdl:part element="impl:consultarOperacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarMensagemRegistratoRequest">
+
+      <wsdl:part element="impl:consultarMensagemRegistrato" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="cancelarTransacaoRequest">
+
+      <wsdl:part element="impl:cancelarTransacao" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultarOperacaoResponse">
+
+      <wsdl:part element="impl:consultarOperacaoResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirMensagemRegistratoRequest">
+
+      <wsdl:part element="impl:incluirMensagemRegistrato" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="incluirTransacaoPrioridadeDDARequest">
+
+      <wsdl:part element="impl:incluirTransacaoPrioridadeDDA" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="consultaMsgV2Response">
+
+      <wsdl:part element="impl:consultaMsgV2Response" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="IL_ServicesLT">
+
+      <wsdl:operation name="consultaMsg">
+
+         <wsdl:input message="impl:consultaMsgRequest" name="consultaMsgRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaMsgResponse" name="consultaMsgResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaStatusV2">
+
+         <wsdl:input message="impl:consultaStatusV2Request" name="consultaStatusV2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaStatusV2Response" name="consultaStatusV2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaStatus">
+
+         <wsdl:input message="impl:consultaStatusRequest" name="consultaStatusRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaStatusResponse" name="consultaStatusResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaMsgV2">
+
+         <wsdl:input message="impl:consultaMsgV2Request" name="consultaMsgV2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultaMsgV2Response" name="consultaMsgV2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirTransacao">
+
+         <wsdl:input message="impl:incluirTransacaoRequest" name="incluirTransacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:incluirTransacaoResponse" name="incluirTransacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirPrevisao">
+
+         <wsdl:input message="impl:incluirPrevisaoRequest" name="incluirPrevisaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:incluirPrevisaoResponse" name="incluirPrevisaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirOperacao">
+
+         <wsdl:input message="impl:incluirOperacaoRequest" name="incluirOperacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:incluirOperacaoResponse" name="incluirOperacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelarPrevisao">
+
+         <wsdl:input message="impl:cancelarPrevisaoRequest" name="cancelarPrevisaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cancelarPrevisaoResponse" name="cancelarPrevisaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="alterarPrevisao">
+
+         <wsdl:input message="impl:alterarPrevisaoRequest" name="alterarPrevisaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:alterarPrevisaoResponse" name="alterarPrevisaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="alterarOperacao">
+
+         <wsdl:input message="impl:alterarOperacaoRequest" name="alterarOperacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:alterarOperacaoResponse" name="alterarOperacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelarTransacaoV2">
+
+         <wsdl:input message="impl:cancelarTransacaoV2Request" name="cancelarTransacaoV2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cancelarTransacaoV2Response" name="cancelarTransacaoV2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirTransacaoV2">
+
+         <wsdl:input message="impl:incluirTransacaoV2Request" name="incluirTransacaoV2Request">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:incluirTransacaoV2Response" name="incluirTransacaoV2Response">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelarTransacao">
+
+         <wsdl:input message="impl:cancelarTransacaoRequest" name="cancelarTransacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:cancelarTransacaoResponse" name="cancelarTransacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarPrevisao">
+
+         <wsdl:input message="impl:consultarPrevisaoRequest" name="consultarPrevisaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultarPrevisaoResponse" name="consultarPrevisaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarOperacao">
+
+         <wsdl:input message="impl:consultarOperacaoRequest" name="consultarOperacaoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultarOperacaoResponse" name="consultarOperacaoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirMensagemRegistrato">
+
+         <wsdl:input message="impl:incluirMensagemRegistratoRequest" name="incluirMensagemRegistratoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:incluirMensagemRegistratoResponse" name="incluirMensagemRegistratoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="conciliaPrevisoes">
+
+         <wsdl:input message="impl:conciliaPrevisoesRequest" name="conciliaPrevisoesRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:conciliaPrevisoesResponse" name="conciliaPrevisoesResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarMensagemRegistrato">
+
+         <wsdl:input message="impl:consultarMensagemRegistratoRequest" name="consultarMensagemRegistratoRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:consultarMensagemRegistratoResponse" name="consultarMensagemRegistratoResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirTransacaoPrioridadeDDA">
+
+         <wsdl:input message="impl:incluirTransacaoPrioridadeDDARequest" name="incluirTransacaoPrioridadeDDARequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:incluirTransacaoPrioridadeDDAResponse" name="incluirTransacaoPrioridadeDDAResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="IL_ServicesLTSoapBinding" type="impl:IL_ServicesLT">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="consultaMsg">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaMsgRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaMsgResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaStatusV2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaStatusV2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaStatusV2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaStatus">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaStatusRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaStatusResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultaMsgV2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultaMsgV2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultaMsgV2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirTransacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="incluirTransacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="incluirTransacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirPrevisao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="incluirPrevisaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="incluirPrevisaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirOperacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="incluirOperacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="incluirOperacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelarPrevisao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelarPrevisaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelarPrevisaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="alterarPrevisao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="alterarPrevisaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="alterarPrevisaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="alterarOperacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="alterarOperacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="alterarOperacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelarTransacaoV2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelarTransacaoV2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelarTransacaoV2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirTransacaoV2">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="incluirTransacaoV2Request">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="incluirTransacaoV2Response">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="cancelarTransacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="cancelarTransacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="cancelarTransacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarPrevisao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultarPrevisaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultarPrevisaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarOperacao">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultarOperacaoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultarOperacaoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirMensagemRegistrato">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="incluirMensagemRegistratoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="incluirMensagemRegistratoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="conciliaPrevisoes">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="conciliaPrevisoesRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="conciliaPrevisoesResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="consultarMensagemRegistrato">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="consultarMensagemRegistratoRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="consultarMensagemRegistratoResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="incluirTransacaoPrioridadeDDA">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="incluirTransacaoPrioridadeDDARequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="incluirTransacaoPrioridadeDDAResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="IL_ServicesLTService">
+
+      <wsdl:port binding="impl:IL_ServicesLTSoapBinding" name="IL_ServicesLT">
+
+         <wsdlsoap:address location="http://tempuri.org/integra_cria_wsdl_LT/services/IL_ServicesLT"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
